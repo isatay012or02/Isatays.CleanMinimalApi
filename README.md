@@ -1,0 +1,2 @@
+# Isatays.CleanMinimalApi
+for practice

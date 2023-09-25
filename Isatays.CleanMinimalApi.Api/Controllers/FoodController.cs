@@ -16,7 +16,7 @@ namespace Isatays.CleanMinimalApi.Api.Controllers;
 [ApiVersion("2.0")]
 public class FoodController : BaseController
 {
-    [HttpGet("food")]
+    [HttpGet("get")]
     [ProducesResponseType(statusCode: (int)HttpStatusCode.OK, type: typeof(Food))]
     public async Task<IActionResult> GetFood(int userId)
     {
@@ -28,7 +28,7 @@ public class FoodController : BaseController
         return Ok(result.Value);
     }
 
-    [HttpPost("create-food")]
+    [HttpPost("create")]
     [ProducesResponseType(statusCode: (int)HttpStatusCode.OK, type: typeof(int))]
     public async Task<IActionResult> CreateFood([FromBody] CreateFoodRequest request)
     {
@@ -40,7 +40,7 @@ public class FoodController : BaseController
         return Ok(result.Value);
     }
 
-    [HttpPut("update-food")]
+    [HttpPut("update")]
     [ProducesResponseType(statusCode: (int)HttpStatusCode.OK, type: typeof(Unit))]
     public async Task<IActionResult> UpdateFood([FromBody] UpdateFoodRequest request)
     {
@@ -52,7 +52,7 @@ public class FoodController : BaseController
         return Ok();
     }
 
-    [HttpPut("delete-food")]
+    [HttpPut("delete")]
     [ProducesResponseType(statusCode: (int)HttpStatusCode.OK, type: typeof(Unit))]
     public async Task<IActionResult> DeleteFood([FromBody] DeleteFoodRequest request)
     {

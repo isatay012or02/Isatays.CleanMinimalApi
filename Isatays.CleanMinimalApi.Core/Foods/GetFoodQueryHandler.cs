@@ -19,12 +19,12 @@ public class GetFoodQueryHandler : IRequestHandler<GetFoodQuery, Result<Food>>
 	public async Task<Result<Food>> Handle(GetFoodQuery request, CancellationToken cancellationToken)
 	{
 		var food = await _foodsDbContext.Foods
-			.Where(f => f.UserId.Equals(request.UserId) && f.Id.Equals(request.Id))
+			.Where(f => f.UserId.Equals(request.UserId))
 			.FirstAsync();
 
 		if (food is null)
 		{
-            throw new NotFoundException(nameof(Food), request.Id);
+            throw new NotFoundException(nameof(Food), request.UserId);
         }
 
 		return Result.Success(food);

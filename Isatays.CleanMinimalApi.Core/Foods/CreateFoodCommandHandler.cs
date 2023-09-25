@@ -16,18 +16,25 @@ public class CreateFoodCommandHandler : IRequestHandler<CreateFoodCommand, Resul
 
     public async Task<Result<int>> Handle(CreateFoodCommand request, CancellationToken cancellationToken)
     {
-        var food = new Food()
+        try
         {
-            UserId = request.UserId,
-            Name = request.Name,
-            Description = request.Description,
-            CreationDate = DateTime.UtcNow,
-            EditDate = null
-        };
+            var food = new Food()
+            {
+                Name = request.Name,
+                Description = request.Description,
+                CreationDate = DateTime.UtcNow,
+                EditDate = null
+            };
 
-        await _foodsDbContext.Foods.AddAsync(food);
-        await _foodsDbContext.SaveChangesAsync();
+            await _foodsDbContext.Foods.AddAsync(food);
+            await _foodsDbContext.SaveChangesAsync();
 
-        return Result.Success(food.Id);
+            return Result.Success(food.Id);
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        
     }
 }

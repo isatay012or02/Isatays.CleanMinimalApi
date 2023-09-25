@@ -5,7 +5,11 @@ namespace Isatays.CleanMinimalApi.Core.Foods;
 
 public class CreateFoodCommand : IRequest<Result<int>>
 {
-    public int UserId { get; set; }
+    public CreateFoodCommand(string name, string description)
+    {
+        Name = name;
+        Description = description;
+    }
 
     public string Name { get; set; }
 

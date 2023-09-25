@@ -5,15 +5,12 @@ namespace Isatays.CleanMinimalApi.Core.Foods;
 
 public class UpdateFoodCommand : IRequest<Result>
 {
-    public UpdateFoodCommand(int id, int userId, string name, string description)
+    public UpdateFoodCommand(int userId, string name, string description)
     {
-        Id = id;
-        UserId= userId;
+        UserId = userId;
         Name = name;
         Description = description;
     }
-
-    public int Id { get; set; }
 
     public int UserId { get; set; }
 

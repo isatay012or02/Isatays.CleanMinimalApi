@@ -17,7 +17,7 @@ public class DeleteFoodCommandHandler : IRequestHandler<DeleteFoodCommand, Resul
 	public async Task<Result> Handle(DeleteFoodCommand request, CancellationToken cancellationToken)
 	{
 		var result = await _foodsDbContext.Foods.
-			Where(f => f.Id.Equals(request.Id) && f.UserId.Equals(request.UserId))
+			Where(f => f.UserId.Equals(request.UserId))
 			.FirstAsync();
 
 		_foodsDbContext.Foods.Remove(result);

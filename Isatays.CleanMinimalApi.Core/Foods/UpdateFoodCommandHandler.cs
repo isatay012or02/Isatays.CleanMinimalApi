@@ -17,16 +17,17 @@ public class UpdateFoodCommandHandler : IRequestHandler<UpdateFoodCommand, Resul
 
     public async Task<Result> Handle(UpdateFoodCommand request, CancellationToken cancellationToken)
     {
-        var query = await _foodsDbContext.Foods.FirstOrDefaultAsync(f => f.Id == request.Id);
+        var query = await _foodsDbContext.Foods.FirstOrDefaultAsync(f => f.UserId.Equals(request.UserId));
 
         if (query == null)
         {
             //Result.Failure();
-            throw new NotFoundException(nameof(query), request.Id);
+            throw new NotFoundException(nameof(query), request.UserId);
         }
 
         query.Name = request.Name;
         query.Description = request.Description;
+        query.EditDate = DateTime.UtcNow;
         await _foodsDbContext.SaveChangesAsync();
 
         return Result.Success();

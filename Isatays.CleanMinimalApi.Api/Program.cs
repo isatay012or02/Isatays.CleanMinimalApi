@@ -6,6 +6,8 @@ using Isatays.CleanMinimalApi.Api.Features.WebHost;
 using Isatays.CleanMinimalApi.Api.Common.Options;
 using Isatays.CleanMinimalApi.Infrastructure;
 using Isatays.CleanMinimalApi.Core;
+using Isatays.CleanMinimalApi.Api.Endpoints;
+using Carter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +29,8 @@ try
 
     builder.Services.ConfigureApplicationAssemblies();
 
+    builder.Services.AddCarter();
+
     builder.Services
         .ConfigureInfrastructurePersistence(builder.Configuration, builder.Environment.EnvironmentName)
         .ConfigureInfrastructureServices(builder.Configuration, builder.Environment.EnvironmentName);
@@ -43,7 +47,11 @@ try
     app.UseMiddleware<LoggingMiddleware>();
     app.UseMiddleware<ExceptionHandleMiddleware>();
     app.MapHealthChecks("/healthcheck");
+
     app.MapControllers();
+    //app.MapFoodEndpoints();
+    app.MapCarter();
+
     app.Run();
 }
 catch (Exception ex)

@@ -6,7 +6,6 @@ using Isatays.CleanMinimalApi.Api.Features.WebHost;
 using Isatays.CleanMinimalApi.Api.Common.Options;
 using Isatays.CleanMinimalApi.Infrastructure;
 using Isatays.CleanMinimalApi.Core;
-using Isatays.CleanMinimalApi.Api.Endpoints;
 using Carter;
 
 var builder = WebApplication.CreateBuilder(args);

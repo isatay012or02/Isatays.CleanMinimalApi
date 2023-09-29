@@ -1,5 +1,6 @@
 ﻿using Isatays.CleanMinimalApi.Core.Interfaces;
 using Isatays.CleanMinimalApi.Infrastructure.Persistense;
+using Isatays.CleanMinimalApi.Infrastructure.RabbitMq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,7 @@ public static class ServiceCollectionExtentions
     public static IServiceCollection ConfigureInfrastructureServices(this IServiceCollection services, IConfiguration configuration, string environmentName)
     {
         services.AddScoped<IFoodsDbContext, FoodsContext>();
+        services.AddScoped<IRabbitMqService, RabbitMqService>();
 
         return services;
     }

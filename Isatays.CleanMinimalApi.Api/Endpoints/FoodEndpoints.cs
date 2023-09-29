@@ -12,13 +12,13 @@ public class FoodEndpoints : ICarterModule
 {
     void ICarterModule.AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("api/food", GetFood).WithName(nameof(GetFood));
+        app.MapGet("api/food", GetFood).WithName(nameof(GetFood)).WithGroupName("Foods");
 
-        app.MapPost("api/food", CreateFood).WithName(nameof(CreateFood));
+        app.MapPost("api/food", CreateFood).WithName(nameof(CreateFood)).WithGroupName("Foods");
 
-        app.MapPut("api/food", UpdateFood).WithName(nameof(UpdateFood));
+        app.MapPut("api/food", UpdateFood).WithName(nameof(UpdateFood)).WithGroupName("Foods");
 
-        app.MapPut("api/food", DeleteFood).WithName(nameof(DeleteFood));
+        app.MapDelete("api/food", DeleteFood).WithName(nameof(DeleteFood)).WithGroupName("Foods");
     }
 
     [HttpGet("get", Name = nameof(GetFood))]
@@ -54,7 +54,7 @@ public class FoodEndpoints : ICarterModule
         return Results.Ok();
     }
 
-    [HttpPut("delete", Name = nameof(DeleteFood))]
+    [HttpDelete("delete", Name = nameof(DeleteFood))]
     [ProducesResponseType(statusCode: (int)HttpStatusCode.OK, type: typeof(Unit))]
     public static async Task<IResult> DeleteFood([FromBody] DeleteFoodRequest request, ISender sender)
     {

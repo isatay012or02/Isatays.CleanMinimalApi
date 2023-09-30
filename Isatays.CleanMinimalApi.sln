@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{AEBA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageQueueConsumer", "MessageQueueConsumer\MessageQueueConsumer.csproj", "{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageQueueConsoleApp", "MessageQueueConsoleApp\MessageQueueConsoleApp.csproj", "{0337887A-7CCA-429D-AC4E-FE84162E1E59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0337887A-7CCA-429D-AC4E-FE84162E1E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0337887A-7CCA-429D-AC4E-FE84162E1E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0337887A-7CCA-429D-AC4E-FE84162E1E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0337887A-7CCA-429D-AC4E-FE84162E1E59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{C76AE437-2EF2-46B6-86B5-2D5D9096469E} = {B554188A-DA53-4324-B748-D5B1BB229556}
 		{D6915913-E68A-40CE-874B-05186F02FD9D} = {B554188A-DA53-4324-B748-D5B1BB229556}
 		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F} = {AEBA9CEF-9C36-4CBD-99C3-CE5F5FE1D4A9}
+		{0337887A-7CCA-429D-AC4E-FE84162E1E59} = {AEBA9CEF-9C36-4CBD-99C3-CE5F5FE1D4A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8CAF2422-0B38-43BE-9F48-7D19050E1831}

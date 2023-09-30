@@ -7,11 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B554188A-DA5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4473E773-9979-4507-9E2A-D6B29746AFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isatays.CleanMinimalApi.Api", "Isatays.CleanMinimalApi.Api\Isatays.CleanMinimalApi.Api.csproj", "{091AB079-8944-44C8-8D72-3E515330E85F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isatays.CleanMinimalApi.Api", "Isatays.CleanMinimalApi.Api\Isatays.CleanMinimalApi.Api.csproj", "{091AB079-8944-44C8-8D72-3E515330E85F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isatays.CleanMinimalApi.Core", "Isatays.CleanMinimalApi.Core\Isatays.CleanMinimalApi.Core.csproj", "{C76AE437-2EF2-46B6-86B5-2D5D9096469E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isatays.CleanMinimalApi.Core", "Isatays.CleanMinimalApi.Core\Isatays.CleanMinimalApi.Core.csproj", "{C76AE437-2EF2-46B6-86B5-2D5D9096469E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Isatays.CleanMinimalApi.Infrastructure", "Isatays.CleanMinimalApi.Infrastructure\Isatays.CleanMinimalApi.Infrastructure.csproj", "{D6915913-E68A-40CE-874B-05186F02FD9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Isatays.CleanMinimalApi.Infrastructure", "Isatays.CleanMinimalApi.Infrastructure\Isatays.CleanMinimalApi.Infrastructure.csproj", "{D6915913-E68A-40CE-874B-05186F02FD9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{AEBA9CEF-9C36-4CBD-99C3-CE5F5FE1D4A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageQueueConsumer", "MessageQueueConsumer\MessageQueueConsumer.csproj", "{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{D6915913-E68A-40CE-874B-05186F02FD9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6915913-E68A-40CE-874B-05186F02FD9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6915913-E68A-40CE-874B-05186F02FD9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +47,7 @@ Global
 		{091AB079-8944-44C8-8D72-3E515330E85F} = {B554188A-DA53-4324-B748-D5B1BB229556}
 		{C76AE437-2EF2-46B6-86B5-2D5D9096469E} = {B554188A-DA53-4324-B748-D5B1BB229556}
 		{D6915913-E68A-40CE-874B-05186F02FD9D} = {B554188A-DA53-4324-B748-D5B1BB229556}
+		{6F5FD2B7-80F7-464F-8F3E-184179F1EA4F} = {AEBA9CEF-9C36-4CBD-99C3-CE5F5FE1D4A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8CAF2422-0B38-43BE-9F48-7D19050E1831}

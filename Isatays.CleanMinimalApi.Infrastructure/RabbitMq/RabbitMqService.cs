@@ -15,8 +15,6 @@ public class RabbitMqService : IRabbitMqService
 
     public void SendMessage(string message)
     {
-        // Не забудьте вынести значения "localhost" и "MyQueue"
-        // в файл конфигурации
         var factory = new ConnectionFactory() { Uri = new Uri("amqps://ocwiksvx:wcGxIMwWx6oU4m50hfmdns2JASmpQXsj@mustang.rmq.cloudamqp.com/ocwiksvx") };
         using (var connection = factory.CreateConnection())
         using (var channel = connection.CreateModel())

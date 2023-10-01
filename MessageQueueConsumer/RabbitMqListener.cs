@@ -12,8 +12,6 @@ public class RabbitMqListener : BackgroundService
 
     public RabbitMqListener()
     {
-        // Не забудьте вынести значения "localhost" и "MyQueue"
-        // в файл конфигурации
         var factory = new ConnectionFactory { Uri = new Uri("amqps://ocwiksvx:wcGxIMwWx6oU4m50hfmdns2JASmpQXsj@mustang.rmq.cloudamqp.com/ocwiksvx") };
         _connection = factory.CreateConnection();
         _channel = _connection.CreateModel();

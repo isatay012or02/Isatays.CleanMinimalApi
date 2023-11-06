@@ -9,13 +9,15 @@ public class RabbitMqListener : BackgroundService
 {
     private IConnection _connection;
     private IModel _channel;
+    private readonly IConfiguration _configuration;
 
-    public RabbitMqListener()
+    public RabbitMqListener(IConfiguration configuration)
     {
-        var factory = new ConnectionFactory { Uri = new Uri("amqps://ocwiksvx:wcGxIMwWx6oU4m50hfmdns2JASmpQXsj@mustang.rmq.cloudamqp.com/ocwiksvx") };
+        _configuration = configuration;
+        var factory = new ConnectionFactory { Uri = new Uri(_configuration["RabbitMqConf:rabbitMqConString"]) };
         _connection = factory.CreateConnection();
         _channel = _connection.CreateModel();
-        _channel.QueueDeclare(queue: "MyQueue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+        _channel.QueueDeclare(queue: _configuration["RabbitMqConf:QueueName"], durable: false, exclusive: false, autoDelete: false, arguments: null);
     }
 
     protected override Task ExecuteAsync(CancellationToken stoppingToken)
@@ -27,13 +29,12 @@ public class RabbitMqListener : BackgroundService
         {
             var content = Encoding.UTF8.GetString(ea.Body.ToArray());
 
-            // Каким-то образом обрабатываем полученное сообщение
             Debug.WriteLine($"Получено сообщение: {content}");
 
             _channel.BasicAck(ea.DeliveryTag, false);
         };
 
-        _channel.BasicConsume("MyQueue", false, consumer);
+        _channel.BasicConsume(_configuration["RabbitMqConf:QueueName"], false, consumer);
 
         return Task.CompletedTask;
     }
